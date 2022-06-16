@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
+import { Auth } from '../../interfaces/auth.interface';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
@@ -14,9 +16,15 @@ import { HeroesService } from '../../services/heroes.service';
   ],
 })
 export class HeroesHomeComponent implements OnInit {
+  get auth() {
+    return this.authService.auth;
+  }
   constructor(
+    private authService: AuthService,
     private activatedRouted: ActivatedRoute,
-    private heroesService: HeroesService
+    private heroesService: HeroesService,
+
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -25,5 +33,9 @@ export class HeroesHomeComponent implements OnInit {
         console.log(pais);
       });
     });
+  }
+
+  logout() {
+    this.router.navigate(['./auth']);
   }
 }

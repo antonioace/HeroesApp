@@ -177,15 +177,6 @@
       "alt_img": "https://i.pinimg.com/originals/97/5e/be/975ebe3805ffa8fbaefa7d6c1a974ea5.jpg"
     },
     {
-      "id": "HXLo9yh",
-      "superhero": "Joker",
-      "alter_ego": "Arhtur",
-      "characters": "Joker ",
-      "first_appearance": "1968",
-      "publisher": "DC COMICS",
-      "alt_img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/joker-comics-1570545185.jpg"
-    },
-    {
       "id": "2kJxCq1",
       "superhero": "Batman que rie",
       "alter_ego": "Bruno Diaz",
@@ -193,6 +184,15 @@
       "first_appearance": "2010",
       "publisher": "DC COMICS",
       "alt_img": "http://pm1.narvii.com/6915/9c2fea711c3288ade786a73f8ae6d43a2c916269r1-720-1011v2_uhq.jpg"
+    },
+    {
+      "id": "e_KlEOe",
+      "superhero": "Superior Iron Man",
+      "alter_ego": "Toni Stark",
+      "characters": "Toni",
+      "first_appearance": "1999",
+      "publisher": "MARVEL COMICS",
+      "alt_img": "https://i.pinimg.com/564x/7f/a7/6b/7fa76b30ed11d443f8421c5c3f241a03--superior-iron-man-crazy-suits.jpg"
     }
   ]
 }

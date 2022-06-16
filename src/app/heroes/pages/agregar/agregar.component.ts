@@ -4,6 +4,8 @@ import { switchMap, tap } from 'rxjs';
 import { Heroe, Publisher } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmarComponent } from '../../components/confirmar/confirmar.component';
 
 @Component({
   selector: 'app-agregar',
@@ -41,7 +43,8 @@ export class AgregarComponent implements OnInit {
     private heroesService: HeroesService,
     private activatedRouted: ActivatedRoute,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private matDialog: MatDialog
   ) {}
 
   guardar() {
@@ -63,9 +66,21 @@ export class AgregarComponent implements OnInit {
   }
 
   eliminar() {
-    this.heroesService.eliminarHeroe(this.heroe).subscribe((resp) => {
-      this.router.navigate(['/heroes/listado']);
+    const dialog = this.matDialog.open(ConfirmarComponent, {
+      width: '250px',
+      data: this.heroe,
     });
+
+    dialog.afterClosed().subscribe((result) => {
+      if (result) {
+        this.heroesService.eliminarHeroe(this.heroe).subscribe((resp) => {
+          this.router.navigate(['/heroes/listado']);
+        });
+      }
+    });
+    /*   this.heroesService.eliminarHeroe(this.heroe).subscribe((resp) => {
+      this.router.navigate(['/heroes/listado']);
+    }); */
   }
 
   mostrarSnackBar(mensaje: string) {

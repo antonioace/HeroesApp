@@ -16,6 +16,10 @@ const rutas: Routes = [
         path: 'registro',
         component: RegisterComponent,
       },
+      {
+        path: '**',
+        redirectTo: 'login',
+      },
     ],
   },
 ];

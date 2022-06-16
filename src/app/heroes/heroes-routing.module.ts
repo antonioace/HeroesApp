@@ -6,6 +6,7 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HeroesHomeComponent } from './pages/heroes-home/heroes-home.component';
+import { AuthGuard } from '../auth/guards/auth.guard';
 
 const rutas: Routes = [
   {
@@ -13,13 +14,12 @@ const rutas: Routes = [
     component: HeroesHomeComponent,
     children: [
       {
-        path: 'listado',
-        component: ListadoComponent,
-      },
-
-      {
         path: 'agregar',
         component: AgregarComponent,
+      },
+      {
+        path: 'listado',
+        component: ListadoComponent,
       },
 
       {
@@ -44,7 +44,7 @@ const rutas: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule.forChild(rutas)],
+  imports: [RouterModule.forChild(rutas)],
   exports: [RouterModule],
 })
 export class HeroesRoutingModule {}

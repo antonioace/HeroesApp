@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './shared/error/error.component';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 const routess: Routes = [
   {
@@ -17,6 +18,7 @@ const routess: Routes = [
     loadChildren: () =>
       import('./heroes/heroes.module').then((m) => m.HeroesModule),
   },
+
   { path: '**', redirectTo: '404' },
 ];
 
