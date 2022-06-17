@@ -10,7 +10,7 @@ import { AuthGuard } from '../auth/guards/auth.guard';
 
 const rutas: Routes = [
   {
-    path: 'heroes',
+    path: '',
     component: HeroesHomeComponent,
     children: [
       {
@@ -43,7 +43,6 @@ const rutas: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
   imports: [RouterModule.forChild(rutas)],
   exports: [RouterModule],
 })

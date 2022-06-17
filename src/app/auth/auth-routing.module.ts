@@ -6,7 +6,7 @@ import { RegisterComponent } from './pages/register/register.component';
 
 const rutas: Routes = [
   {
-    path: 'auth',
+    path: '',
     children: [
       {
         path: 'login',
@@ -24,7 +24,6 @@ const rutas: Routes = [
   },
 ];
 @NgModule({
-  declarations: [],
   imports: [CommonModule, RouterModule.forChild(rutas)],
   exports: [RouterModule],
 })

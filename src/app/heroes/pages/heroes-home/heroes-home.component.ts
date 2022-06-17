@@ -36,6 +36,8 @@ export class HeroesHomeComponent implements OnInit {
   }
 
   logout() {
+    this.authService.logaut();
+
     this.router.navigate(['./auth']);
   }
 }
